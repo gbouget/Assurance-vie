@@ -1,0 +1,466 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{enumitem}
+
+\title{Assurance vie}
+\author{Gaëtan Bouget \\ \href{mailto:bouget.g@gmail.com}{bouget.g@gmail.com}}
+\date{12 janvier 2020}
+
+\usepackage[french]{babel}
+\usepackage{natbib}
+\usepackage{graphicx}
+\usepackage{xcolor}
+\usepackage{mdframed}
+\usepackage{lscape}
+\usepackage{tcolorbox}
+\usepackage[paper=portrait,pagesize]{typearea}
+\usepackage[linguistics]{forest}
+
+\usepackage{hyperref}
+
+\definecolor{swotS}{RGB}{199,236,12}
+
+\addtolength{\skip\footins}{2pc plus 5pt} % espace des notes de fin page
+
+\newcommand{\blackFrame}[2]{
+    \begin{tcolorbox}[colback=white,colframe=black!100!white,title={#1}]
+        #2
+    \end{tcolorbox}
+}
+
+\begin{document}
+
+\maketitle
+\thispagestyle{empty}
+
+\vspace{3cm}
+
+\begin{center}
+    \includegraphics[width=5cm]{dandelion.jpg}
+\end{center}
+
+\vspace{3cm}
+
+Titulaire d'un master en informatique, je travaille depuis deux ans à Gfi Informatique dans la branche fonctionnelle de la Banque, Finance et Assurance. Parmi nos nombreux clients, j'interviens pour le compte de Cardif, filiale du groupe BNP Paribas, dans l'exploitation et l'évolution de son système d'information.
+
+\newpage
+
+\tableofcontents
+
+\newpage
+
+%% --------------------------------------------------------------
+%% --------------------------------------------------------------
+\section{Généralités sur l'assurance}
+
+\subsection{Pourquoi s'assurer ?}
+À chaque instant de la vie, l'être vivant est confronté à une multitude de risques qui peuvent altérer sa qualité de vie. Le risque est défini comme la possibilité qu'un événement redouté et aléatoire se produise. Si le risque se réalise, alors cet événement est appelé sinistre dans le langage des assurances. Pour se prémunir d'un risque, l'individu possède deux moyens d'actions :
+\begin{itemize}
+    \item Éviter que le risque survienne en diminuant la probabilité d'occurrence. \\ Exemple : vaccination
+    \item Atténuer (voire annihiler) la gravité des conséquences en cas de sinistre. \\
+    Exemples : port de la ceinture de sécurité, assurance
+\end{itemize}
+
+L'assurance est un dispositif qui permet à une personne victime d'un sinistre d'y faire face grâce au versement d'une prestation (souvent financière).
+
+\subsection{Qui sont les principaux acteurs ?}
+\subsubsection{Assureur}
+L'assureur est une personne morale qui s'engage à verser une prestation (somme d'argent généralement) lorsque l'assuré est victime d'un sinistre. En France, l'exercice des opérations d'assurances nécessite obligatoirement un agrément auprès de l'Autorité de Contrôle Prudentiel et de Résolution (ACPR, L321-1). L'organisme d'assurances peut revêtir trois formes juridiques (L310-1) :
+\begin{itemize}
+    \item Les sociétés d'assurances (réglementées par le code des assurances) :  société anonyme, société d'assurance mutuelle ou société européenne (L322-1)
+    \item Les mutuelles (réglementées par le code de la mutualité)
+    \item Les instituts de prévoyance (réglementés par le code de la sécurité sociale)
+\end{itemize}
+
+À titre indicatif, le registre géré par l'ACPR permet de connaitre la liste de tous les organismes agréés. Cependant, dans la pratique, la souscription d'un contrat d'assurance se conclut rarement avec l'assureur directement, mais plutôt par le biais d'un intermédiaire, appelé distributeur d'assurances.
+
+\subsubsection{Distributeur d'assurances}
+Régie par le livre 5 du code des assurances, l'activité de distribution consiste à \textit{fournir des recommandations sur des contrats d'assurance [...], à présenter, proposer ou aider à conclure ces contrats ou à réaliser d'autres travaux préparatoires à leur conclusion, ou à contribuer à leur gestion et à leur exécution, notamment en cas de sinistre} (L511-1).
+
+Historiquement, le mode de distribution la plus courante --~si ce n'est l'unique~-- est l'intermédiation : c'est-à-dire la mise en relation du \textit{client} (personne souhaitant souscrire ou adhérer à un contrat d'assurance) avec l'assureur. Profession strictement encadrée par l'État, l'intermédiaire a l'obligation de s'inscrire dans le registre ORIAS dont la lecture est accessible à tous les citoyens (L512-1). Les principaux statuts juridiques des intermédiaires sont :
+
+\begin{itemize}
+    \item Courtier
+    \item Agent général d'assurances
+    \item Mandataire d'assurances
+    \item Mandataire intermédiaire d'assurances
+\end{itemize}
+
+Depuis quelques décennies, de nouveaux modes de distribution émergent et bousculent le marché traditionnellement régi par les intermédiaires. Ainsi, en 1970, le rapprochement entre le secteur bancaire et le secteur des assurances donne naissance à la notion de \textit{bancassurance} dont les parts de marché ne cessent de croitre. D'ailleurs, je suppose que c'est dans cette logique que la Directive sur la Distribution d'Assurance (DDA) adoptée en 2016 abroge l'ancienne directive sur les intermédiaires. Dorénavant, sur le plan terminologique, la distribution englobe la notion d'intermédiation même si les termes restent flous dans certains textes selon Jean Bigot\footnote{DDA et les mots des technocrates
+[en ligne]. [consulté le 24 décembre 2019]. Disponible sur : \href{https://www.argusdelassurance.com/juriscope/decryptages/dda-et-les-mots-des-technocrates.145990}{https://www.argusdelassurance.com/.../dda-et-les-mots-des-technocrates}}.
+
+Pour finir, les \textit{assurances affinitaires} peuvent être proposées par des distributeurs dont le coeur de métier est très éloigné de l'assurance. La Fédération des garanties et assurances affinitaires (FG2A) définie une assurance affinitaire comme \textit{toute garantie d'assurance, d'assistance ou service accessoire en lien avec l'univers d'un produit ou service distribué par un distributeur non-assureur et qui n'est pas le motif principal d'achat du client}.
+
+\subsubsection{Souscripteur}
+Le souscripteur est une personne morale ou physique dont le rôle est d'établir et de conclure le contrat avec l'assureur. Dans la plupart des cas, le souscripteur et l'assuré sont la même personne. Lorsque le souscripteur et l'assuré sont deux personnes différentes, le souscripteur est contraint d'obtenir l'approbation de l'assuré pour signer le contrat (L132-2). Le souscripteur est redevable du paiement des primes sauf dans le cas des contrats de groupe où le règlement peut incomber à l'adhérent (L141-2, L141-3).
+
+\subsubsection{Adhérent}
+Dans le cas des contrats collectifs, la souscription est réalisée par une personne morale ou un chef d'entreprise au profit des membres d'une même collectivité, appelés adhérents (L141-1). Elle repose sur une relation tripartite :
+\begin{enumerate}
+    \item Le souscripteur et l'assureur conclut un contrat cadre pour fixer les conditions d'application du contrat aux futurs adhérents.
+    \item Le futur adhérent remet un bulletin d'adhésion à l'assureur pour la création d'un contrat individuel lié au contrat de groupe.
+\end{enumerate}
+
+\subsubsection{Assuré}
+L'assuré désigne la personne sur laquelle porte le risque. En cas de sinistre, l'assuré reçoit la prestation sauf dans l'assurance en cas de décès où il s'agit du bénéficiaire.
+
+\subsubsection{Bénéficiaire}
+L'assurance en cas de décès de l'assuré prévoit le versement de la prestation à un ou plusieurs bénéficiaires désignés dans la police par le contractant (souscripteur ou adhérent).
+
+Suite à l'acceptation du bénéfice par le bénéficiaire en assurance vie et capitalisation (contrats rachetables), le contractant ne peut plus modifier la quote-part accordée ni récupérer l'argent versé sur le contrat (rachat ou avance) sans obtenir l'accord du bénéficiaire au préalable (L132-9).
+
+\subsection{Comment souscrire à un contrat ?}
+La souscription d'un contrat s'effectue auprès d'un organisme d'assurances. Le cycle peut être découpé en trois étapes :
+\begin{enumerate}
+    \item Définir les besoins pour déterminer le contrat d'assurance adapté
+    \item Jauger l'état du marché : comparateur d'assurances, intermédiaires, etc.
+    \item Conclure la vente par la signature de la police d'assurance sur un support durable
+\end{enumerate}
+
+\subsection{Que se passe-t-il après la souscription du contrat ?}
+Les possibilités dépendent de l'accord passé avec l'assureur (dont le récapitulatif figure dans la police d'assurance). Néanmoins, le mode de gestion de l'argent par l'assureur détermine en grande partie les actions possibles pendant la vie du contrat. L'assureur dispose de deux possibilités pour gérer les primes (c'est-à-dire l'argent versé par les clients) :
+
+\begin{itemize}
+    \item la gestion par mutualisation dans la majorité des cas ;
+    \item la gestion par capitalisation dans le cadre de l'assurance-vie.
+\end{itemize}
+
+\subsubsection{Gestion par mutualisation}
+Dans la gestion d'un contrat par mutualisation (cf figure~\ref{gestion_mutualisation} page~\pageref{gestion_mutualisation}), l'argent versé par le contractant sur le contrat est utilisé pour indemniser les autres contrats du même type. Pour ce faire, les versements de chaque client s'accumulent dans un fonds commun. Puis, en cas de sinistre de l'un d'entre-eux, l'assureur retire l'argent du fonds commun pour effectuer l'indemnisation. Pour le client, le système fonctionne à perte dans le sens où il ne peut pas récupérer volontairement l'argent qu'il a versé à l'assureur. Cependant, l'avantage est de se couvrir d'un risque à un coût relativement peu coûteux par rapport au montant de l'indemnité perçue en cas de sinistre. Côté assureur, l'actuariat joue un rôle primordial dans l'analyse de l'impact financier du risque afin de concilier deux tableaux : proposer des tarifs compétitifs au client tout en préservant les marges de l'assureur.
+
+\begin{figure}[h!]
+    \includegraphics[width=\textwidth]{gestion_mutualisation.PNG}
+    \caption{
+        \label{gestion_mutualisation} Gestion par mutualisation
+    }
+\end{figure}
+
+\subsubsection{Gestion par capitalisation}
+Dans la gestion par capitalisation (cf figure~\ref{gestion_capitalisation} page~\pageref{gestion_capitalisation}), l'argent versé par le client (contractant) s'accumule sur son propre contrat. Ensuite, l'assureur investit cet argent sur des supports financiers pour le faire fructifier. Contrairement à la gestion par mutualisation, le contractant possède un droit de créance sur les sommes versées sur le contrat.
+
+Sauf cas contraires (bénéficiaire acceptant, nantissement, etc.), le contractant peut débloquer l'argent versé sur contrat à tout moment grâce à une demande de rachat. Dès lors, l'assureur verse tout ou partie du capital présent sur le contrat additionné des éventuelles plus-values (également appelées intérêts ou produits) réalisées grâce aux placements sur les supports financiers. En moyenne, la durée d'attente entre la demande de rachat et la réception du paiement est de l'ordre de quelques semaines.
+
+\begin{figure}[h!]
+    \includegraphics[width=\textwidth]{gestion_capitalisation.PNG}
+    \caption{\label{gestion_capitalisation} Gestion par capitalisation
+    }
+\end{figure}
+
+\blackFrame{Résumé}{
+La gestion par capitalisation (assurance en cas de vie) est adaptée aux \textbf{produits d'épargne} alors que la gestion par mutualisation (toutes les autres assurances : assurances habitation, automobile, maladie, décès, etc.) est utilisée pour les \textbf{produits de prévoyance}.
+}
+
+\subsection{Comment dénouer le contrat ?}
+Le dénouement du contrat peut être consécutif à un sinistre ou à échéance du contrat. En assurance sur la vie (gestion par capitalisation), le client peut clore le contrat de sa propre initiative suite à un rachat total.  
+
+% TODO : Aborder la résiliation ?
+
+\subsection{Comment classer les assurances ?}
+Les assurances peuvent être classées de plusieurs manières en fonction :
+\begin{itemize}
+    \item de la branche d'après l'article R321-1 pour l'octroi de l'agrément d'exercice ;
+    \item de la nature du risque : assurances de dommages ou assurances de personnes ;
+    \item du mode de gestion des primes par l'assureur : mutualisation ou capitalisation ;
+    \item du type de la prestation fournie : principe forfaitaire ou principe indemnitaire.
+\end{itemize}
+
+La classification habituelle des assurances figure en annexe \ref{appendix:classification-assurances}.
+
+\subsubsection{Classification selon la nature du risque}
+La classification selon la nature du risque distingue deux catégories : les assurances de dommages et les assurances de personnes. Les assurances de dommages couvrent le patrimoine de l'assuré alors que les assurances de personnes portent sur sa santé (en vie et en bonne santé physique et mentale).
+
+Exemples :
+\begin{itemize}
+    \item Assurances de dommages : assurance habitation, assurance voiture, assurance responsabilité civile, etc.
+    \item Assurances de personnes : assurance maladie, assurance vie, assurance décès, etc.
+\end{itemize}
+
+\subsubsection{Classification selon le mode de gestion des primes}
+L'assurance en cas de vie est la seule assurance gérée en capitalisation par l'assureur. Cela signifie que l'argent versé sur le contrat est investi par l'assureur sur les marchés financiers. En revanche, lorsque la gestion est faite en mutualisation, alors les primes servent à indemniser les sinistres du même type et ayant eu lieu la même année.
+
+\subsubsection{Classification selon le type de prestation fournie}
+Sous cet angle, le critère de discrimination est basé sur le montant de l'indemnisation perçue par l'assuré. Tout d'abord, le type indemnitaire couvre l'assuré en versant une indemnité dont le montant ne peut excéder la valeur de la \textit{chose} sinistrée au moment de l'accident. Ainsi, une expertise peut parfois s'avérer nécessaire pour estimer cette valeur. À contrario, si le contrat repose sur le type forfaitaire, alors le montant est clairement explicité dès la souscription du contrat sans tenir compte du montant du préjudice réellement subi.
+
+La législation considère que les assurances de personnes relèvent du principe forfaitaire (L131-1) alors que les assurances de dommages sont concernées par le principe indemnitaire (L121-1).
+
+\blackFrame{Exemple}{
+Après un accident, le conducteur est indemne mais la voiture est inutilisable. L'achat a été réalisé il y a cinq ans pour un montant de 15 000 euros.
+\begin{itemize}
+    \item Si le propriétaire a souscrit une assurance basée sur le type indemnitaire, une expertise technique peut être nécessaire pour déterminer la valeur d'achat de la \textit{chose} -- la voiture en l'occurrence -- au moment de l'accident (et non au moment de l'achat). En se basant sur plusieurs critères comme la valeur d'achat et l'état du marché, l'expertise estime le prix de la voiture au moment de l'accident. Pour cet exemple, la valeur estimée de la voiture au moment du sinistre est de 7 500 euros. Ainsi, l'indemnité perçue par l'assuré (le propriétaire de la voiture) ne peut pas excéder 7~500 euros.
+    \item Si le propriétaire a souscrit une assurance basée sur le type forfaitaire, alors le montant est déterminé au moment de la souscription. Dès lors, il est possible d'imaginer plusieurs scénarios. L'un d'entre eux pourrait prévoir une indemnisation à la hauteur du prix d'achat si la voiture est inutilisable après un sinistre (donc 15~000 euros). Mais, il est tout fait possible de négocier à la hausse comme à la baisse ce montant. Bien sûr, le montant des primes à payer à l'assureur va fluctuer en même temps que le montant de la prestation perçue par l'assuré (indemnité) : le coût de la prime à payer croit avec le montant de l'indemnité perçue en cas de sinistre.
+\end{itemize}
+En synthèse, le principe forfaitaire peut enrichir l'assuré en cas de sinistre contrairement au principe indemnitaire. Pour rappel, l'assurance est fondée sur le caractère imprévisible et non souhaité du sinistre par l'assuré. Si ce dernier provoque intentionnellement la survenance du sinistre, alors c'est une fraude à l'assurance (reconnue comme un délit par le code pénal).
+}
+
+%% --------------------------------------------------------------
+%% --------------------------------------------------------------
+\newpage
+
+\section{Fonctionnement de l'assurance vie}
+L'assurance vie est fondée sur l'aléa lié à la durée de vie humaine. D'un point de vue strict, il existe deux grandes formes d'assurance vie :
+\begin{itemize}
+    \item Assurance en cas de décès : versement d'une prestation (capital ou rente) aux bénéficiaires désignés par le contractant si l'assuré décède avant le terme (date définie ou vie entière).
+    \item Assurance en cas de vie : versement d'une prestation (capital ou rente) au contractant si l'assuré est en vie au terme du contrat. En cas de décès avant le terme, les capitaux sont conservés par l'assureur.
+\end{itemize}
+
+L'assurance en cas de décès permet de protéger les proches de l'assuré alors que l'assurance en cas de vie est utilisée comme un placement. Pour répondre simultanément à ces deux besoins, les assureurs peuvent proposer une contre assurance pour couvrir le deuxième cas ou vendre directement une assurance mixte en cas de vie et de décès. L'assurance mixte est une assurance en cas de vie avec l'adjonction d'une clause pour garantir le versement du capital à des bénéficiaires si le décès survient avant le terme (appelée clause bénéficiaire).
+
+Dans la suite du document, l'assurance vie est vue comme une assurance mixte.
+
+\subsection{Pourquoi souscrire un contrat d'assurance vie ?}
+L'assurance vie (en cas de vie et en cas de décès) est un produit d'épargne qui permet de répondre à plusieurs objectifs grâce à un régime juridique et fiscal spécifique :
+\begin{itemize}
+    \item Constituer et valoriser un capital grâce aux placements sur les supports financiers.
+    \item Préparer sa retraite grâce à la récupération progressive du capital (rachats partiels programmés) ou en transformant le capital en rente viagère. 
+    \item Transmettre un capital en profitant des avantages fiscaux.
+    \item Faire face à un besoin d'argent inopiné grâce à un capital disponible à tout moment (rachat ou avance). En moyenne, le délai d'attente entre la demande de récupération des liquidités et la réception des fonds est de quelques semaines.
+\end{itemize}
+
+\subsection{Comment fonctionne un contrat d'assurance vie ?}
+Le fonctionnement d'un contrat d'assurance vie peut se résumer en quelques opérations :
+\begin{itemize}
+    \item Choisir les supports financiers sur lesquels investir
+    \item Ajouter de l'argent
+    \item Retirer de l'argent
+\end{itemize}
+L'arbitrage est une opération qui permet de modifier la répartition de l'épargne sur les produits financiers.
+
+% image
+\subsection{Quels sont les supports financiers ?}
+L'assureur peut être perçu comme un intermédiaire entre les instruments financiers et l'investisseur (également appelé contractant ou client en fonction du contexte). L'essentiel à retenir est que l'assureur propose deux types de supports :
+\begin{itemize}
+    \item Le fonds en euro
+    \item Les unités de compte
+\end{itemize}
+Le fonds en euro est constitué d'un ensemble d'instruments financiers gérés par l'assureur. Généralement, l'assureur place l'argent sur des actifs peu risqués afin d'honorer deux caractéristiques clefs du fonds : la garantie du capital et la garantie cliquet (chaque année, les gains réalisés sont définitivement acquis et intègrent le capital pour produire à leur tour des intérêts).
+
+À contrario, les unités de compte sont des supports financiers où le contractant détient \textit{directement} des titres financiers. Dans ce cas, l'assureur est tenu d'en garantir le nombre, mais la valeur d'un titre peut fluctuer à la hausse ou à la baisse.
+
+\subsection{Quels sont les types de contrats ?}
+L'assurance vie se décline en deux grands types : l'assurance vie monosupport et l'assurance vie multisupport. Les primes d'un contrat monosupport sont investies dans un seul support : le fonds en euro souvent. Or, les caractéristiques du fonds en euro que sont la garantie du capital et l'effet cliquet contraignent l'assureur à orienter les primes vers des instruments financiers à faibles risques comme les obligations d'États. Depuis quelques années, les États bien notés (réputés peu risqués) empruntent à des taux très bas, ce qui se répercutent sur le rendement des investisseurs. Pour y remédier, la tendance est plutôt à la diversification des placements grâce aux contrats multisupports : une partie sur le fonds en euro pour la sécurité, et une autre partie sur les unités de compte pour rechercher la performance (rentabilité). Les pouvoirs publics encouragent d'ailleurs cette pratique en permettant le transfert des capitaux d'un contrat monosupport vers un contrat multisupport sans perdre l'antériorité fiscale du contrat d'origine.
+
+% Contrats dérivés
+% Eurocroissance : multisupport
+% vie génération : monosupport en UC
+% DSK / NSK : multisupport
+
+% amendement Fourgous
+\blackFrame{Amendement Fourgous}{
+Dans le cadre de la loi du 26 juillet 2005 pour la confiance et la modernisation de l'économie, l'amendement Fourgous permet au souscripteur de transférer le capital d'un contrat monosupport vers un contrat multisupport sans perdre les avantages fiscaux du contrat d'origine (l'antériorité fiscale du contrat monosupport est conservée).
+}
+
+\subsection{Comment gérer l'épargne ?}
+\subsubsection{Comment déposer de l'argent ?}
+Le versement d'argent sur le contrat s'appelle une prime. À minima, un versement est réalisé lors de l'ouverture du contrat à la souscription. Par la suite, le contractant peut verser de l'argent à tout moment (versement libre) ou automatiser le versement des primes à des échéances régulières (primes programmées).
+
+\subsubsection{Comment retirer de l'argent ?}
+Le retrait de l'épargne est possible grâce à l'opération de rachat ou l'avance. Le rachat peut être total ou partiel. S'il est total, alors le contrat se dénoue et le contractant récupère la totalité du capital. Si le rachat est partiel, le contractant choisit le montant à retirer et éventuellement les supports à désinvestir. Dans ce cas, le contrat n'est pas dénoué et le reste du capital continue de générer des intérêts. Pour terminer, l'assureur peut également octroyer une avance. Le fonctionnement d'une avance est similaire à un prêt : l'assureur prête de l'argent sans l'imputer au capital du contrat contrairement à un rachat. Bien que l'avance comporte des frais et un taux d'intérêt (débiteur pour le contractant), la solution peut parfois s'avérer moins coûteuse car la totalité du capital présent sur le contrat continue de produire des intérêts (créditeurs pour le contractant).
+
+\blackFrame{Cas particuliers}{
+    Certaines situations peuvent empêcher le contractant d'effectuer un rachat ou une avance comme le nantissement (délégation de créance). De même, depuis le 18 décembre 2007, le consentement du bénéficiaire est nécessaire si celui-ci a accepté de recevoir le capital en cas de décès.
+}
+
+\subsubsection{À quoi sert l'arbitrage ?}
+La difficulté de l'investissement réside dans l'allocation d'actifs. Pour un investisseur rationnel, le rendement est la rémunération du risque. En d'autres termes, un investisseur accepte de s'exposer davantage au risque de perdre son capital en contrepartie d'un meilleur rendement (une prime de risque). Inversement, un investisseur qui souhaite améliorer le rendement de son portefeuille doit accepter de prendre des risques. C'est pourquoi le choix des supports financiers est une étape primordiale car il détermine l'ampleur des gains et des éventuelles pertes. 
+
+\blackFrame{Mandat de gestion}{
+Le contractant peut mandater une tierce personne pour gérer la répartition de son épargne sur les supports financiers. La gestion sous mandat implique une première phase d'étude pour établir le profil d'investisseur afin d'ajuster au mieux le compromis entre la prise de risque et le rendement. Le mandataire peut être un spécialiste de la gestion d'actifs ou un algorithme.
+}
+
+\subsection{Comment dénouer le contrat ?}
+\subsubsection{Dénouement en cas de vie}
+Le dénouement d'un contrat en cas de vie de l'assuré peut avoir lieu à l'échéance du contrat ou suite à une demande de rachat total par le contactant. Dans les deux cas, les fonds sont versés au contactant.
+
+\subsubsection{Dénouement en cas de décès}
+Le dénouement d'un contrat suite au décès de l'assuré est déclenché lorsque l'assureur en a connaissance suite à la réception de l'acte de décès ou lors de la consultation du répertoire national d'identification des personnes physiques (RNIPP).
+
+\blackFrame{Zoom historique sur la lutte contre la déshérence des capitaux par l'État}{
+Avant 2008, les assureurs n'étaient pas tenus de vérifier que leurs clients étaient bien vivants. Dès lors, la seule manière de dénouer le contrat suite à un décès était d'envoyer l'acte de décès à l'assureur. Or, c'est problématique si l'existence du contrat d'assurance vie est inconnu des bénéficiaires et du notaire : la situation est bloquée car l'assureur ne sait pas que l'assuré est décédé et l'acte de décès n'est pas envoyé car les personnes vivantes (bénéficiaires ou notaire) ignorent l'existence du contrat. Par conséquent, l'assureur pouvait conserver les avoirs et continuer à prélever des frais de gestion. Pour remédier au problème, la loi du 17 décembre 2007 autorise et oblige les assureurs à consulter le RNIPP chaque année (L132-9-3).
+
+En 2014, l'état promulgue la loi Eckert afin de protéger davantage les épargnants et limiter la déshérence à travers les mesures suivantes :
+
+\begin{itemize}
+    \item L'assureur doit verser les capitaux des contrats en déshérence à la Caisse des Dépôts et Consignation. Un contrat est dit en déshérence lorsqu'il reste un solde à régler positif 15 ans après réception de l'acte de décès.
+    \item Le dispositif de la revalorisation post-mortem est renforcé pour inciter les assureurs à rechercher les bénéficiaires. Le principe de la revalorisation est de générer des intérêts dont le montant augmente avec le délai passé entre la date de décès de l'assuré et la réception des pièces du bénéficiaire.
+    \item La loi inflige des pénalités à l'assureur s'il tarde à régler le bénéficiaire alors que toutes les pièces justificatives ont été reçues.
+\end{itemize}
+}
+
+\subsection{Comment fonctionne la fiscalité de l'assurance vie ?}
+\subsubsection{Fiscalité en cas de vie}
+Les primes versées par le contractant à l'assureur dans le cadre de l'assurance vie sont investies sur les supports financiers.  Ces placements peuvent engendrer un gain ou une perte du capital pour l'épargnant. Le gain réalisé est appelé \textit{produit} ou \textit{intérêt}.
+
+Le calcul de la fiscalité des produits est déterminé selon les critères suivants (cf annexe \ref{appendix:fiscalite-vie}) :
+\begin{itemize}
+    \item Date de souscription 
+    \item Date du rachat
+    \item Date du versement
+    \item Montant du versement
+\end{itemize}
+
+\subsubsection{Fiscalité en cas de décès}
+D'après l'article L132-12 du code des assurances, \og le capital ou la rente stipulés payables lors du décès de l'assuré à un bénéficiaire déterminé ou à ses héritiers ne font pas partie de la succession de l'assuré. Le bénéficiaire, quelles que soient la forme et la date de sa désignation, est réputé y avoir eu seul droit à partir du jour du contrat, même si son acceptation est postérieure à la mort de l'assuré. \fg 
+
+En d'autres mots, le dénouement d'un contrat d'assurance vie suite au décès de l'assuré est réalisé hors succession donc les droits de mutation par décès à titre gratuit (droits de succession) ne s'appliquent pas. Cependant, le législateur a mis en place deux articles pour limiter l'optimisation fiscale : l'article 757B et l'article 990I du code général des impôts (CGI). L'article 757B permet d'imposer les versements effectués après le 70\up{e} anniversaire de l'assuré selon le barème des droits de succession. Lorsque les primes n'entrent pas dans le champ de l'article 757B, l'article 990I s'applique et impose les versements selon un barème dérogatoire défini dans le même article. Par ailleurs, l'impôt est également prélevé à travers les cotisations sociales. Celles-ci sont prélevées au fil de l'eau pour le fonds en euros et au dénouement du contrat pour les supports en unités de compte. 
+
+Si nul n'échappe aux prélèvements sociaux, l'impôt dû aux titres des articles 990I et 757B varie en fonction de plusieurs critères (cf annexe \ref{appendix:fiscalite-deces}) :
+\begin{itemize}
+    \item Date de souscription (ou d'adhésion) au contrat
+    \item Date du versement
+    \item Âge de l'assuré au moment du versement
+    \item Lien de parenté entre le bénéficiaire et l'assuré
+\end{itemize}
+
+\blackFrame{Exonération des droits de succession}{
+    Depuis la loi TEPA, le conjoint ou le partenaire de PACS est totalement exonéré des droits de succession pour tous les décès survenus après le 22 août 2007. Il n'est donc redevable que des prélèvements sociaux. La loi prévoit également l'exonération des droits de succession entre frères et soeurs sous certaines conditions.
+}
+
+\newpage
+\section{Recommandations}
+Outre les textes officiels (code des assurances, arrêts de la Cour de cassation, etc.), je recommande les sources secondaires suivantes pour s'approprier certains sujets ou maintenir une veille :
+\begin{itemize}
+    \item Livres
+        \begin{itemize}
+        \item Hubert Groutel. Droit des assurances, 14\up{e} édition. Éditions Dalloz, paru en 2018
+        \item Jérémy Houssier. Droit des succession et des libéralités, 1\up{re} édition. Éditions Dalloz, paru en 2018
+        \item Guide pratique sur l'épargne et l'assurance-vie, édition 2019. Éditions Francis Lefebvre, paru en 2018
+        %\item Stéphane Berre, Sylvie Ferré-André. Successions et libéralités 2019, 5\up{e} édition, édition Dalloz, paru en 12/2018
+    \end{itemize}
+    \item Sites web
+    \begin{itemize}
+        \item https://www.ffa-assurance.fr/
+        \item https://www.argusdelassurance.com/
+        \item https://www.leblogpatrimoine.com/
+    \end{itemize}
+    \item Podcasts
+    \begin{itemize}
+        \item Sur la plateforme Youtube, La chaine \textit{Heu?reka} propose des podcasts pour s'initier à l'économie et à la finance.
+    \end{itemize}
+\end{itemize}
+
+%% =============================================================
+%% =============================================================
+
+\afterpage{\null\newpage}
+
+
+\appendix
+
+
+\section{Classification habituelle des assurances}
+\label{appendix:classification-assurances}
+%Schéma : https://aurelienbamde.com/2019/05/21/classification-habituelle-des-assurances/
+
+\KOMAoptions{paper=landscape,pagesize}
+\begin{figure}[h!]
+    \center
+    \includegraphics[scale=0.6]{classification-assurances.png}
+    \caption{
+        \label{classification-assurances} Classification habituelle des assurances - Julien Bourdoiseau
+    }
+\end{figure}
+
+\newpage
+\KOMAoptions{paper=landscape,pagesize}
+\section{Fiscalité d'un contrat d'assurance vie en cas de rachat}
+\label{appendix:fiscalite-vie}
+
+\begin{figure}[h!]
+\centering
+\begin{forest}
+[Date de souscription,frame, draw
+    [Avant le 01/01/1983 
+        [Exonération totale]
+    ]
+    [Après le 01/01/1983
+        [Date de versement, frame, draw
+            [Avant le 27 septembre 2017
+                [Choix du souscripteur, frame, draw
+                    [Option : IR]
+                    [Option : PFL
+                        [Ancienneté du contrat, frame, draw
+                            [Inférieur à 4 ans [35\%]]
+                            [Entre 4 et 8 ans [15\%]]
+                            [Supérieur à 8 ans [7.5\% après abattement]]
+                        ]
+                    ]
+                ]
+            ]
+            [Après le 27 septembre 2017
+                [Choix du souscripteur, frame, draw
+                    [Option : IR]
+                    [Option : PFU
+                        [Ancienneté du contrat, frame, draw
+                            [Inférieur à 8 ans [35\%]]
+                            [Supérieur à 8 ans 
+                                [Montant des versements, frame, draw
+                                    [Inférieur à 150 000 euros [7.5\% après abattement]]
+                                    [Supérieur à 150 000 euros [12.8\% après abattement]]
+                                ]
+                            ]
+                        ]
+                    ]
+                ]
+            ]
+        ]
+    ]
+]
+\end{forest}
+\caption[]{Taxation simplifiée des produits}
+\end{figure}
+
+\newpage
+\KOMAoptions{paper=landscape,pagesize}
+\section{Fiscalité d'un contrat d'assurance vie en cas de décès}
+\label{appendix:fiscalite-deces}
+
+\subsection{Éligibilité à la fiscalité des articles 757B et 990I}
+\begin{figure}[h!]
+\centering
+\begin{forest}
+[Date de souscription, frame, draw
+  [Avant 20 novembre 1991
+    [Date de versement des primes, frame, draw 
+      [Avant le 13 octobre 1998 [Exonération] ]
+      [Avant le 13 octobre 1998
+        [Lien de parenté, frame, draw
+          [Conjoint \\ Partenaire de PACS [Exonération] ]
+          [Non conjoint \\ Non partenaire de PACS [990I] ]
+        ]
+      ]
+    ]
+  ] 
+  [Après le 20 novembre 1991 
+    [Date de versement des primes, frame, draw 
+      [Avant le 13 octobre 1998 [Exonération] ]
+      [Avant le 13 octobre 1998
+        [Lien de parenté, frame, draw
+          [Conjoint \\ Partenaire de PACS [Exonération] ]
+          [Non conjoint \\ Non Partenaire de PACS
+            [Âge de l'assuré, frame, draw 
+              [Versements avant 70 ans [990I] 
+              [Versements après 70 ans [757B]]
+            ]
+          ]
+        ]
+      ]
+    ]
+  ] 
+]
+]
+\end{forest}
+\caption[]{Fiscalité simplifiée du capital en cas de décès}
+\end{figure}
+
+\newpage
+\KOMAoptions{paper=portrait,pagesize}
+\subsection{Article 757B}
+L'imposition est appliquée sur les primes versées après les 70 ans de l'assuré après un abattement de 30 500 € sur l'ensemble des contrats. Au delà de l'abattement, la fraction est imposée selon le barème des droits de mutation par décès à titre gratuit (le taux varie en fonction du lien de parenté entre l'assuré et le bénéficiaire).
+% Voir le calcul lorsqu'un des bénéficiaires est exonéré
+
+\subsection{Article 990I}
+L'imposition est appliquée après un abattement de 152 500 euros sur la tête du bénéficiaire pour l'ensemble des fonds perçus dans le cadre d'une assurance-vie. Pour connaitre ce montant, l'assureur demande au bénéficiaire une attestation sur l'honneur. Si l'abattement est épuisé, alors le capital est imposé au taux de 20\% pour la fraction allant jusqu'à 700 000 euros, et 31,25\% au-delà.
+
+\newpage
+
+\end{document}
