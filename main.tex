@@ -379,35 +379,54 @@ Outre les textes officiels (code des assurances, arrêts de la Cour de cassation
 
 \begin{figure}[h!]
 \centering
+
+\forestset{
+    sn edges/.style={
+        for tree={
+            parent anchor=south, 
+            child anchor=north,
+            align=center,
+            base=bottom,
+            where n children=0{tier=word}{}
+        }
+    },
+    background tree/.style={
+        for tree={
+            text opacity=0.2,
+            draw opacity=0.2,
+            edge={draw opacity=0.2}
+        }
+    }
+}
 \begin{forest}
 [Date de souscription,frame, draw
     [Avant le 01/01/1983 
-        [Exonération totale]
+        [\textbf{Exonération}]
     ]
     [Après le 01/01/1983
         [Date de versement, frame, draw
             [Avant le 27 septembre 2017
                 [Choix du souscripteur, frame, draw
-                    [Option : IR]
-                    [Option : PFL
+                    [IR [\textbf{Art. 197} \\ \textbf{CGI}]]
+                    [PFL
                         [Ancienneté du contrat, frame, draw
-                            [Inférieur à 4 ans [35\%]]
-                            [Entre 4 et 8 ans [15\%]]
-                            [Supérieur à 8 ans [7.5\% après abattement]]
+                            [Inférieure à 4 ans [\textbf{35\%}]]
+                            [Entre 4 et 8 ans [\textbf{15\%}]]
+                            [Supérieure à 8 ans [\textbf{7.5\%}]]
                         ]
                     ]
                 ]
             ]
             [Après le 27 septembre 2017
                 [Choix du souscripteur, frame, draw
-                    [Option : IR]
-                    [Option : PFU
+                    [IR [\textbf{Art. 197} \\ \textbf{CGI}]]
+                    [PFU
                         [Ancienneté du contrat, frame, draw
-                            [Inférieur à 8 ans [35\%]]
-                            [Supérieur à 8 ans 
+                            [Inférieure à 8 ans [\textbf{35\%}]]
+                            [Supérieure à 8 ans 
                                 [Montant des versements, frame, draw
-                                    [Inférieur à 150 000 euros [7.5\% après abattement]]
-                                    [Supérieur à 150 000 euros [12.8\% après abattement]]
+                                    [Inférieur à 150 000 euros [\textbf{7.5\%}]]
+                                    [Supérieur à 150 000 euros [\textbf{12.8\%}]]
                                 ]
                             ]
                         ]
