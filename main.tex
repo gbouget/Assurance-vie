@@ -180,7 +180,7 @@ L'assurance en cas de vie est la seule assurance gérée en capitalisation par l
 \subsubsection{Classification selon le type de prestation fournie}
 Sous cet angle, le critère de discrimination est basé sur le montant de l'indemnisation perçue par l'assuré. Tout d'abord, le type indemnitaire couvre l'assuré en versant une indemnité dont le montant ne peut excéder la valeur de la \textit{chose} sinistrée au moment de l'accident. Ainsi, une expertise peut parfois s'avérer nécessaire pour estimer cette valeur. À contrario, si le contrat repose sur le type forfaitaire, alors le montant est clairement explicité dès la souscription du contrat sans tenir compte du montant du préjudice réellement subi.
 
-La législation considère que les assurances de personnes relèvent du principe forfaitaire (L131-1) alors que les assurances de dommages sont concernées par le principe indemnitaire (L121-1).
+La législation considère que les assurances de personnes relèvent du principe forfaitaire (L131-1) alors que les assurances de dommages se basent sur le principe indemnitaire (L121-1).
 
 \blackFrame{Exemple}{
 Après un accident, le conducteur est indemne mais la voiture est inutilisable. L'achat a été réalisé il y a cinq ans pour un montant de 15 000 euros.
@@ -429,41 +429,54 @@ Outre les textes officiels (code des assurances, arrêts de la Cour de cassation
 \subsection{Éligibilité à la fiscalité des articles 757B et 990I}
 \begin{figure}[h!]
 \centering
+
+\forestset{
+    sn edges/.style={
+        for tree={
+            parent anchor=south, 
+            child anchor=north,
+            align=center,
+            base=bottom,
+            where n children=0{tier=word}{}
+        }
+    },
+    background tree/.style={
+        for tree={
+            text opacity=0.2,
+            draw opacity=0.2,
+            edge={draw opacity=0.2}
+        }
+    }
+}
 \begin{forest}
-[Date de souscription, frame, draw
-  [Avant 20 novembre 1991
-    [Date de versement des primes, frame, draw 
-      [Avant le 13 octobre 1998 [Exonération] ]
-      [Après le 13 octobre 1998
-        [Lien de parenté, frame, draw
-          [Conjoint \\ Partenaire de PACS [Exonération] ]
-          [Non conjoint \\ Non partenaire de PACS [990I] ]
-        ]
-      ]
-    ]
-  ] 
-  [Après le 20 novembre 1991 
-    [Date de versement des primes, frame, draw 
-      [Avant le 13 octobre 1998 
-        [Âge de l'assuré \\ au moment du versement, frame, draw
-          [Versements \\avant 70 ans [Exonération]]
-          [Versements \\après 70 ans [757B]] 
-        ]
-        
-      ]
-      [Après le 13 octobre 1998
-        [Lien de parenté, frame, draw
-          [Conjoint \\ Partenaire de PACS [Exonération] ]
-          [Non conjoint \\ Non Partenaire de PACS
-            [Âge de l'assuré \\ au moment du versement, frame, draw 
-              [Versements \\avant 70 ans [990I]]
-              [Versements \\après 70 ans [757B]]
+[Lien de parenté, frame, draw
+    [Conjoint \\ Partenaire de PACS [\textbf{Exonération}]]
+    [Non conjoint \\ Non Partenaire de PACS
+        [Date de souscription, frame, draw
+          [Avant 20 novembre 1991
+            [Date de versement des primes, frame, draw 
+              [Avant le 13 octobre 1998 [\textbf{Exonération}] ]
+              [Après le 13 octobre 1998 [\textbf{990I}] ]
             ]
           ] 
+          [Après le 20 novembre 1991 
+            [Date de versement des primes, frame, draw 
+              [Avant le 13 octobre 1998 
+                [Âge de l'assuré \\ au moment du versement, frame, draw 
+                  [Versements \\avant 70 ans [\textbf{Exonération}]]
+                  [Versements \\après 70 ans [\textbf{757B}]]
+                ]
+              ]
+              [Après le 13 octobre 1998
+                [Âge de l'assuré \\ au moment du versement, frame, draw 
+                  [Versements \\avant 70 ans [\textbf{990I}]]
+                  [Versements \\après 70 ans [\textbf{757B}]]
+                ]
+              ]
+            ] 
+          ]
         ]
-      ]
-    ] 
-  ]
+    ]
 ]
 \end{forest}
 \caption[]{Fiscalité simplifiée du capital en cas de décès}
